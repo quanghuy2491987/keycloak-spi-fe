@@ -18,7 +18,6 @@ export async function createCredential(options: any) {
         alg: alg
       })),
       authenticatorSelection: { 
-        authenticatorAttachment: "cross-platform",  
         userVerification: "preferred", 
         residentKey: "required" 
       },

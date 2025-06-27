@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:22-alpine
+    container_name: keycloak-spi-fe
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - /mnt/data-disk/logs/keycloak-client:/app/logs
+    command: npm start
+
+networks:
+  default:
+    external: true
+    name: shared-network
